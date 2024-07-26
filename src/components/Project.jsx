@@ -9,6 +9,8 @@ import projectImage4 from "../assets/curr.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import pslick from "../assets/pslick.jpg";
+
 const projects = [
   {
     title: "PMB : PAY MY Bills",
@@ -187,25 +189,28 @@ const Project = () => {
         className="bg-[#090a34] p-2 rounded-lg mt-8 shadow-xl"
       >
         {projectsSlides.map((slide, index) => (
-          <div
-            key={index}
-            className="bg-pslick bg-cover bg-center p-10 rounded-lg shadow-lg transition-transform transform hover:scale-105"
-          >
-            <h3 className="text-2xl font-extrabold text-center text-yellow-400 mb-4">
-              {slide.title}
-            </h3>
-            <div className="text-center space-y-4">
-              <p className="text-lg font-semibold text-gray-100">
-                {slide.projectName}
-              </p>
-              <a
-                href={slide.demoLink}
-                className="relative inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800"
-              >
-                <span className="relative px-5 py-2.5 transition-all ease-in duration-75  dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                  View Demo
-                </span>
-              </a>
+          <div key={index}>
+            {" "}
+            <div
+              className="bg-center bg-cover p-10 rounded-lg shadow-lg transition-transform transform hover:scale-105"
+              style={{ backgroundImage: `url(${pslick})` }}
+            >
+              <h3 className="text-2xl font-extrabold text-center text-yellow-400 mb-4">
+                {slide.title}
+              </h3>
+              <div className="text-center space-y-4 ">
+                <p className="text-lg font-semibold text-gray-100">
+                  {slide.projectName}
+                </p>
+                <a
+                  href={slide.demoLink}
+                  className="relative inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800"
+                >
+                  <span className="relative px-5 py-2.5 transition-all ease-in duration-75  dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                    View Demo
+                  </span>
+                </a>
+              </div>
             </div>
           </div>
         ))}

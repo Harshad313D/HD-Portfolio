@@ -22,6 +22,11 @@ module.exports = {
         anime: ['Noto Sans JP', 'sans-serif'],
         // Add more as needed
       },
+      backgroundImage: {
+        'about-bg': "url('src/assets/about-bg.jpg')", // Path to your image
+        'project-bg': "url('src/assets/pslick.jpg')",
+      },
+     
     },
   },
   plugins: [],

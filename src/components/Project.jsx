@@ -5,6 +5,7 @@ import projectImage1 from "../assets/pmb.png";
 import projectImage2 from "../assets/ssms.jpg";
 import projectImage3 from "../assets/qr.png";
 import projectImage4 from "../assets/curr.png";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -188,7 +189,7 @@ const Project = () => {
         {projectsSlides.map((slide, index) => (
           <div
             key={index}
-            className="bg-[url('src/assets/pslick.jpg')] bg-cover bg-center p-10 rounded-lg shadow-lg transition-transform transform hover:scale-105"
+            className="bg-project-bg bg-cover bg-center p-10 rounded-lg shadow-lg transition-transform transform hover:scale-105"
           >
             <h3 className="text-2xl font-extrabold text-center text-yellow-400 mb-4">
               {slide.title}

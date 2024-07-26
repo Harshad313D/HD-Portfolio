@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import desk from "../assets/desk.png";
 
 const Education = () => {
   const [activeTab, setActiveTab] = useState("ssc");
@@ -16,15 +17,15 @@ const Education = () => {
       <div className="flex flex-col lg:flex-row mt-4">
         {/* left side */}
         <div className="lg:w-1/2 px-4">
-          <div className="mb-4 border-b border-gray-200 dark:border-gray-700">
+          <div className="mb-4 border-b border-gray-200 dark:border-gray-700 overflow-x-auto">
             <ul
-              className="flex flex-wrap -mb-px text-lg font-bold text-center"
+              className="flex whitespace-nowrap text-base font-bold text-center"
               id="default-styled-tab"
               role="tablist"
             >
-              <li className="me-2" role="presentation">
+              <li className="mr-1" role="presentation">
                 <button
-                  className={`inline-block p-4 border-b-2  rounded-t-lg transition duration-300 ${
+                  className={`inline-block py-2 px-3 border-b-2 rounded-t-lg transition duration-300 ${
                     activeTab === "ssc"
                       ? "text-white bg-gradient-to-r from-blue-500 to-blue-700 border-blue-600"
                       : "hover:text-cyan-300 hover:border-green-600 dark:hover:text-blue-300"
@@ -39,9 +40,9 @@ const Education = () => {
                   SSC
                 </button>
               </li>
-              <li className="me-2" role="presentation">
+              <li className="mr-1" role="presentation">
                 <button
-                  className={`inline-block p-4 border-b-2 rounded-t-lg transition duration-300 ${
+                  className={`inline-block py-2 px-3 border-b-2 rounded-t-lg transition duration-300 ${
                     activeTab === "hsc"
                       ? "text-white bg-gradient-to-r from-yellow-500 to-yellow-700 border-yellow-600"
                       : "hover:text-cyan-300 hover:border-green-600 dark:hover:text-blue-300"
@@ -56,9 +57,9 @@ const Education = () => {
                   HSC
                 </button>
               </li>
-              <li className="me-2" role="presentation">
+              <li className="mr-1" role="presentation">
                 <button
-                  className={`inline-block p-4 border-b-2 rounded-t-lg transition duration-300 ${
+                  className={`inline-block py-2 px-3 border-b-2 rounded-t-lg transition duration-300 ${
                     activeTab === "graduation"
                       ? "text-white bg-gradient-to-r from-fuchsia-500 to-fuchsia-700 border-yellow-600"
                       : "hover:text-cyan-300 hover:border-green-600 dark:hover:text-blue-300"
@@ -75,7 +76,7 @@ const Education = () => {
               </li>
               <li role="presentation">
                 <button
-                  className={`inline-block p-4 border-b-2 rounded-t-lg transition duration-300 ${
+                  className={`inline-block py-2 px-3 border-b-2 rounded-t-lg transition duration-300 ${
                     activeTab === "certification"
                       ? "text-white bg-gradient-to-r from-green-500 to-green-700 border-green-600"
                       : "hover:text-cyan-300 hover:border-green-600 dark:hover:text-blue-300"
@@ -92,6 +93,7 @@ const Education = () => {
               </li>
             </ul>
           </div>
+
           <div id="default-styled-tab-content ">
             <div
               className={`p-4 rounded-lg bg-gradient-to-r from-indigo-500 to-blue-400 edu-card  text-white font-serif ${
@@ -311,7 +313,7 @@ const Education = () => {
               </div>
               <div class="center-logo">
                 <img
-                  src="src/assets/desk.png"
+                  src={desk}
                   alt="Education related"
                   className="object-cover filter-shadow"
                 />

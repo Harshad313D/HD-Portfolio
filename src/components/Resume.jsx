@@ -1,5 +1,6 @@
 import React from "react";
 import { FaUserTie } from "react-icons/fa6";
+import me from "../assets/me.png";
 
 const Resume = () => {
   const handleDownload = () => {
@@ -55,7 +56,7 @@ const Resume = () => {
       {/* Right Column */}
       <div className="col-span-1 md:col-end-7 md:col-span-2 flex justify-center items-center z-20">
         <img
-          src="src/assets/me.png"
+          src={me}
           alt="Education related"
           className="object-fill w-full h-auto filter-shadow"
         />

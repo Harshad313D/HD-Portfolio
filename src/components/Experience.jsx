@@ -9,7 +9,7 @@ const Experience = () => {
           Experience
         </h1>
         <p className="text-xl mt-4 italic text-yellow-300">
-          Oops, I am a fresher passing out in Sept 2024.
+          Oops, I am a fresher passing out in 2024.
         </p>
         <p className="text-white italic ">But I have internship experience. </p>
       </header>

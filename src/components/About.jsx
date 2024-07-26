@@ -51,7 +51,8 @@ const About = () => {
         </div>
       </div>
       {/* About Section */}
-      <div className="w-full p-6  text-white bg-[url('src/assets/7.jpg')] bg-cover bg-center ">
+
+      <div className="w-full p-6  text-white bg-about-bg bg-cover bg-center ">
         <div className="max-w-5xl mx-auto pb-6">
           <h1 className="font-bold text-4xl text-center mt-10 text-white hover:text-yellow-300 transition duration-300">
             About Me

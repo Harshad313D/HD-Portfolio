@@ -189,7 +189,7 @@ const Project = () => {
         {projectsSlides.map((slide, index) => (
           <div
             key={index}
-            className="bg-project-bg bg-cover bg-center p-10 rounded-lg shadow-lg transition-transform transform hover:scale-105"
+            className="bg-pslick bg-cover bg-center p-10 rounded-lg shadow-lg transition-transform transform hover:scale-105"
           >
             <h3 className="text-2xl font-extrabold text-center text-yellow-400 mb-4">
               {slide.title}

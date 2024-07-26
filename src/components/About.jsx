@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import slide1 from "../assets/slide1.jpg";
 import slide2 from "../assets/slide2.jpg";
 import slide3 from "../assets/slide3.jpg";
+import aboutBg from "../assets/aboutBg.jpg";
 
 const About = () => {
   const settings = {
@@ -52,7 +53,10 @@ const About = () => {
       </div>
       {/* About Section */}
 
-      <div className="w-full p-6  text-white bg-about-bg bg-cover bg-center ">
+      <div
+        className="w-full p-6  text-white  bg-cover bg-center "
+        style={{ backgroundImage: `url(${aboutBg})` }}
+      >
         <div className="max-w-5xl mx-auto pb-6">
           <h1 className="font-bold text-4xl text-center mt-10 text-white hover:text-yellow-300 transition duration-300">
             About Me

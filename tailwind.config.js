@@ -24,7 +24,9 @@ module.exports = {
       },
       backgroundImage: {
         'about-bg': "url('src/assets/about-bg.jpg')", // Path to your image
-        'project-bg': "url('src/assets/pslick.jpg')",
+      },
+       backgroundImage: {
+        'pslick': "url('src/assets/pslick.jpg')",
       },
      
     },

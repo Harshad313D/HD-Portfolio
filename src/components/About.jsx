@@ -44,7 +44,7 @@ const About = () => {
             />
           </div>
         </Slider>
-        <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center bg-black bg-opacity-50 text-white">
+        <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center bg-black bg-opacity-50 text-white ">
           <h1 className="text-5xl font-comic mb-4">Welcome to My Portfolio</h1>
           <h6 className="text-2xl pl-0 font-comic">
             Discover My Projects and Experience
@@ -75,13 +75,13 @@ const About = () => {
           <p className="font-anime text-lg leading-relaxed mt-8 rounded-lg border-l-4 border-r-4 border-green-600 pl-4 overflow-hidden hover:shadow-xl hover:text-yellow-300 transform hover:scale-105 transition duration-300">
             I am a passionate software developer with a keen interest in
             building impactful applications. I am ready to face challenges,
-            self-motivated, and honest in my work. My mision is to create
+            self-motivated, and honest in my work. My vision is to create
             innovative software solutions that make a difference in people's
             lives and contribute to the advancement of technology. I love coding
             and continuously learning new technologies to stay at the forefront
             of the tech industry.
           </p>
-          <h2 className="font-bold text-3xl  text-center mt-8 text-black-600 hover:text-yellow-300 transition duration-300">
+          {/* <h2 className="font-bold text-3xl  text-center mt-8 text-black-600 hover:text-yellow-300 transition duration-300">
             My Vision
           </h2>
           <p className="text-lg mt-4 leading-relaxed  rounded-lg border-l-4 border-r-4 border-green-600 pl-4 overflow-hidden hover:shadow-xl hover:text-yellow-300 transform hover:scale-105 transition duration-300">
@@ -93,7 +93,7 @@ const About = () => {
             I aim to support my family and friends, ensuring their happiness and
             well-being, while earning a good salary that reflects my dedication
             and expertise.
-          </p>
+          </p> */}
         </div>
       </div>
     </div>

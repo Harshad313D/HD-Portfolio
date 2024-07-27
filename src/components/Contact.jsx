@@ -39,7 +39,7 @@ const Contact = () => {
         <h2 className="text-xl font-bold mb-4">Contact Information</h2>
         <div className="flex space-x-4 mb-4">
           <a
-            href="https://www.linkedin.com/in/yourprofile"
+            href="https://www.linkedin.com/in/harshad-dongardive-054643204/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-700 hover:text-blue-800 bg-white p-1 rounded-xl transition-colors transform hover:scale-105 duration-300"
@@ -47,7 +47,7 @@ const Contact = () => {
             <FaLinkedin size={24} />
           </a>
           <a
-            href="https://github.com/yourprofile"
+            href="https://github.com/Harshad313D"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-900 hover:text-gray-800 bg-white p-1 rounded-xl transition-colors transform hover:scale-105 duration-300"

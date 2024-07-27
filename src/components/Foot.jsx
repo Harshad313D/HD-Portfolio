@@ -14,7 +14,7 @@ const Foot = () => {
           </div>
           <div className="flex space-x-4">
             <a
-              href="https://www.linkedin.com/in/yourprofile"
+              href="https://www.linkedin.com/in/harshad-dongardive-054643204/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-500 hover:text-blue-400 transition-colors"
@@ -22,7 +22,7 @@ const Foot = () => {
               <FaLinkedin size={24} />
             </a>
             <a
-              href="https://github.com/yourprofile"
+              href="https://github.com/Harshad313D"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-gray-300 transition-colors"

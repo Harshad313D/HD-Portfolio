@@ -1,6 +1,7 @@
 import React from "react";
 import { FaUserTie } from "react-icons/fa6";
 import me from "../assets/me.png";
+import me2 from "../assets/me2.png";
 
 const Resume = () => {
   const handleDownload = () => {
@@ -24,7 +25,8 @@ const Resume = () => {
       {/* Left Column */}
       <div className="col-span-1 md:col-start-1 md:col-end-3 text-center pt-8 md:pt-16 relative z-20">
         <div className="flex items-center justify-center mb-4">
-          <FaUserTie size={54} className="mr-4" color="#0099ff" />
+          <FaUserTie size={54} className="mr-4 rounded-lg" color="#0099ff" />
+
           <p className="text-2xl font-comic p-4 bg-white animate-pulse rounded-full w-fit relative z-50">
             Hey there,
           </p>

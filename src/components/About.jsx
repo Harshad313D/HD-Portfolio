@@ -1,10 +1,10 @@
-// src/components/About.jsx
 import React from "react";
 import Slider from "react-slick";
 import slide1 from "../assets/slide1.jpg";
 import slide2 from "../assets/slide2.jpg";
 import slide3 from "../assets/slide3.jpg";
 import aboutBg from "../assets/aboutBg.jpg";
+import useIntersectionObserver from "../components/useIntersectionObserver";
 
 const About = () => {
   const settings = {
@@ -16,6 +16,9 @@ const About = () => {
     autoplay: true,
     autoplaySpeed: 3000,
   };
+
+  const [isVisible1, ref1] = useIntersectionObserver();
+  const [isVisible2, ref2] = useIntersectionObserver();
 
   return (
     <div className="">
@@ -44,7 +47,7 @@ const About = () => {
             />
           </div>
         </Slider>
-        <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center bg-black bg-opacity-50 text-white ">
+        <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center bg-black bg-opacity-50 text-white animate-fadeIn">
           <h1 className="text-5xl font-comic mb-4">Welcome to My Portfolio</h1>
           <h6 className="text-2xl pl-0 font-comic">
             Discover My Projects and Experience
@@ -52,16 +55,20 @@ const About = () => {
         </div>
       </div>
       {/* About Section */}
-
       <div
-        className="w-full p-6  text-white  bg-cover bg-center "
+        className="w-full p-6 text-white bg-cover bg-center"
         style={{ backgroundImage: `url(${aboutBg})` }}
       >
         <div className="max-w-5xl mx-auto pb-6">
           <h1 className="font-bold text-4xl text-center mt-10 text-white hover:text-yellow-300 transition duration-300">
             About Me
           </h1>
-          <p className="mt-4 leading-relaxed font-anime text-lg rounded-lg border-l-4 border-r-4 border-green-600 pl-4 overflow-hidden hover:shadow-xl hover:text-yellow-300 transform hover:scale-105 transition duration-300 ">
+          <p
+            ref={ref1}
+            className={`mt-4 leading-relaxed font-anime text-lg rounded-lg border-l-4 border-r-4 border-green-600 pl-4 overflow-hidden hover:shadow-xl hover:text-yellow-300 transform hover:scale-105 transition duration-300 ${
+              isVisible1 ? "animate-fadeInUp" : "opacity-0"
+            }`}
+          >
             Hello! I’m
             <span className="font-comic mx-3 text-cyan-300 text-xl">
               Harshad Dongardive
@@ -72,7 +79,12 @@ const About = () => {
             CGPA. My educational journey has equipped me with a strong
             foundation in engineering principles and a passion for technology.
           </p>
-          <p className="font-anime text-lg leading-relaxed mt-8 rounded-lg border-l-4 border-r-4 border-green-600 pl-4 overflow-hidden hover:shadow-xl hover:text-yellow-300 transform hover:scale-105 transition duration-300">
+          <p
+            ref={ref2}
+            className={`font-anime text-lg leading-relaxed mt-8 rounded-lg border-l-4 border-r-4 border-green-600 pl-4 overflow-hidden hover:shadow-xl hover:text-yellow-300 transform hover:scale-105 transition duration-300 ${
+              isVisible2 ? "animate-fadeInUp" : "opacity-0"
+            }`}
+          >
             I am a passionate software developer with a keen interest in
             building impactful applications. I am ready to face challenges,
             self-motivated, and honest in my work. My vision is to create
@@ -82,18 +94,18 @@ const About = () => {
             of the tech industry.
           </p>
           {/* <h2 className="font-bold text-3xl  text-center mt-8 text-black-600 hover:text-yellow-300 transition duration-300">
-            My Vision
-          </h2>
-          <p className="text-lg mt-4 leading-relaxed  rounded-lg border-l-4 border-r-4 border-green-600 pl-4 overflow-hidden hover:shadow-xl hover:text-yellow-300 transform hover:scale-105 transition duration-300">
-            My vision is to create and develop amazing products that leave a
-            lasting impact. I aspire to work with a well-renowned firm where I
-            can leverage my skills and contribute to innovative projects. I am
-            committed to improving myself daily, staying updated with new
-            technologies, and mastering the latest trends in the tech industry.
-            I aim to support my family and friends, ensuring their happiness and
-            well-being, while earning a good salary that reflects my dedication
-            and expertise.
-          </p> */}
+//             My Vision
+//           </h2>
+//           <p className="text-lg mt-4 leading-relaxed  rounded-lg border-l-4 border-r-4 border-green-600 pl-4 overflow-hidden hover:shadow-xl hover:text-yellow-300 transform hover:scale-105 transition duration-300">
+//             My vision is to create and develop amazing products that leave a
+//             lasting impact. I aspire to work with a well-renowned firm where I
+//             can leverage my skills and contribute to innovative projects. I am
+//             committed to improving myself daily, staying updated with new
+//             technologies, and mastering the latest trends in the tech industry.
+//             I aim to support my family and friends, ensuring their happiness and
+//             well-being, while earning a good salary that reflects my dedication
+//             and expertise.
+//           </p> */}
         </div>
       </div>
     </div>

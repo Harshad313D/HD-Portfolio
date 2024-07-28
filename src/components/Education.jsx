@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import desk from "../assets/desk.png";
+import useIntersectionObserver from "../components/useIntersectionObserver";
 
 const Education = () => {
+  const [isVisible1, ref1] = useIntersectionObserver();
+
   const [activeTab, setActiveTab] = useState("ssc");
 
   const handleTabClick = (tab) => {
@@ -96,7 +99,7 @@ const Education = () => {
 
           <div id="default-styled-tab-content ">
             <div
-              className={`p-4 rounded-lg bg-gradient-to-r from-indigo-500 to-blue-400 edu-card  text-white font-serif ${
+              className={`p-4 rounded-lg bg-gradient-to-r from-indigo-500 to-blue-400 edu-card  text-white font-serif animate-fadeInUp ${
                 activeTab === "ssc" ? "" : "hidden"
               }`}
               id="ssc-content"
@@ -127,7 +130,7 @@ const Education = () => {
               <p></p>
             </div>
             <div
-              className={`p-4 rounded-lg bg-gradient-to-r from-yellow-500 to-yellow-400 edu-card text-white font-serif ${
+              className={`p-4 rounded-lg bg-gradient-to-r from-yellow-500 to-yellow-400 edu-card text-white font-serif animate-fadeInUp ${
                 activeTab === "hsc" ? "" : "hidden"
               }`}
               id="hsc-content"
@@ -158,7 +161,7 @@ const Education = () => {
               </p>
             </div>
             <div
-              className={`p-4 rounded-lg bg-gradient-to-r from-fuchsia-700 to-fuchsia-500 edu-card font-serif 
+              className={`p-4 rounded-lg bg-gradient-to-r from-fuchsia-700 to-fuchsia-500 edu-card font-serif animate-fadeInUp 
               text-white ${activeTab === "graduation" ? "" : "hidden"}`}
               id="graduation-content"
               role="tabpanel"
@@ -193,7 +196,7 @@ const Education = () => {
               </p>
             </div>
             <div
-              className={`p-4 rounded-lg bg-gradient-to-r from-green-600 to-green-400 edu-card text-white font-serif ${
+              className={`p-4 rounded-lg bg-gradient-to-r from-green-600 to-green-400 edu-card text-white font-serif animate-fadeInUp ${
                 activeTab === "certification" ? "" : "hidden"
               }`}
               id="certification-content"
@@ -257,7 +260,12 @@ const Education = () => {
         {/* right side */}
         <div className="lg:w-1/2 flex justify-center items-center">
           {/* Circle component  */}
-          <section class="filter-shadow ">
+          <section
+            ref={ref1}
+            className={`filter-shadow ${
+              isVisible1 ? "animate-fadeIn" : "opacity-0"
+            }`}
+          >
             <div class="main">
               <div class="big-circle ">
                 <div class="icon-block">

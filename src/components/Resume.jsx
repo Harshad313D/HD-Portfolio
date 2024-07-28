@@ -1,9 +1,12 @@
 import React from "react";
 import { FaUserTie } from "react-icons/fa6";
 import me from "../assets/me.png";
-import me2 from "../assets/me2.png";
+import useIntersectionObserver from "../components/useIntersectionObserver";
 
 const Resume = () => {
+  const [isVisible1, ref1] = useIntersectionObserver();
+  const [isVisible2, ref2] = useIntersectionObserver();
+
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href = "/Harshad_Dongardive_8624966429.pdf";
@@ -21,9 +24,15 @@ const Resume = () => {
           My Resume
         </h2>
       </div>
-
       {/* Left Column */}
-      <div className="col-span-1 md:col-start-1 md:col-end-3 text-center pt-8 md:pt-16 relative z-20">
+
+      <div
+        ref={ref1}
+        className={`col-span-1 md:col-start-1 md:col-end-3 text-center pt-8 md:pt-16 relative z-20 ${
+          isVisible1 ? "animate-slideInLeft" : "opacity-0"
+        }`}
+      >
+        {/* <div className="col-span-1 md:col-start-1 md:col-end-3 text-center pt-8 md:pt-16 relative z-20"> */}
         <div className="flex items-center justify-center mb-4">
           <FaUserTie size={54} className="mr-4 rounded-lg" color="#0099ff" />
 
@@ -54,16 +63,20 @@ const Resume = () => {
           </a>
         </div>
       </div>
-
-      {/* Right Column */}
-      <div className="col-span-1 md:col-end-7 md:col-span-2 flex justify-center items-center z-20">
+      <div
+        ref={ref1}
+        className={`col-span-1 md:col-end-7 md:col-span-2 flex justify-center items-center z-20 ${
+          isVisible1 ? "animate-slideInRight" : "opacity-0"
+        }`}
+      >
+        {/* Right Column */}
+        {/* <div className="col-span-1 md:col-end-7 md:col-span-2 flex justify-center items-center z-20"> */}
         <img
           src={me}
           alt="Education related"
           className="object-fill w-full h-auto filter-shadow"
         />
       </div>
-
       {/* SVG Wave */}
       <div className="col-span-full relative z-10">
         <svg

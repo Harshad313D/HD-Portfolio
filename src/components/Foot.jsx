@@ -30,7 +30,7 @@ const Foot = () => {
               <FaGithub size={24} />
             </a>
             <a
-              href="https://www.instagram.com/yourprofile"
+              href="https://www.instagram.com/hunky_harsh_3/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-pink-500 hover:text-pink-400 transition-colors"

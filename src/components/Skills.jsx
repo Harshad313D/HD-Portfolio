@@ -150,11 +150,13 @@ const skills = {
   ],
 };
 
-const SkillCard = ({ title, skills }) => (
-  <div className="bg-white shadow-lg p-5 rounded-lg comic-card h-full flex flex-col justify-between transform hover:scale-105 transition duration-300">
+const SkillCard = ({ title, skills, animation }) => (
+  <div
+    className={`bg-white shadow-lg p-5 rounded-lg comic-card h-full flex flex-col justify-between transform transition duration-300 ${animation}`}
+  >
     <h2 className="text-2xl font-bold mb-4">{title}</h2>
     {skills.map((skill, index) => (
-      <div key={index} className="mb-4">
+      <div key={index} className="mb-4 ">
         <div className="flex items-center">
           {skill.icon}
           <h3 className="ml-4 text-xl font-bold">{skill.name}</h3>
@@ -182,10 +184,26 @@ const Skills = () => (
         My Skills
       </h1>
       <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6">
-        <SkillCard title="Frontend" skills={skills.frontend} />
-        <SkillCard title="Backend" skills={skills.backend} />
-        <SkillCard title="Cloud" skills={skills.cloud} />
-        <SkillCard title="Tools" skills={skills.tools} />
+        <SkillCard
+          title="Frontend "
+          skills={skills.frontend}
+          animation="animate-slideInLeft"
+        />
+        <SkillCard
+          title="Backend"
+          skills={skills.backend}
+          animation="animate-zoomIn"
+        />
+        <SkillCard
+          title="Cloud"
+          skills={skills.cloud}
+          animation="animate-zoomIn"
+        />
+        <SkillCard
+          title="Tools"
+          skills={skills.tools}
+          animation="animate-slideInRight"
+        />
       </div>
     </div>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">

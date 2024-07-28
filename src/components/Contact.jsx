@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { FaLinkedin, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
+import useIntersectionObserver from "../components/useIntersectionObserver";
 
 const Contact = () => {
+  const [isVisible1, ref1] = useIntersectionObserver();
+  const [isVisible2, ref2] = useIntersectionObserver();
+
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (event) => {
@@ -35,7 +39,14 @@ const Contact = () => {
   return (
     <div className="flex flex-col lg:flex-row items-center justify-between p-6 bg-[#0099ff] min-h-screen">
       {/* Left Side: Social Profiles, Address, Contact Details */}
-      <div className="lg:w-1/3 p-4 flex flex-col items-center">
+
+      <div
+        ref={ref1}
+        className={`lg:w-1/3 p-4 flex flex-col items-center ${
+          isVisible1 ? "animate-slideInLeft" : "opacity-0"
+        }`}
+      >
+        {/* <div className="lg:w-1/3 p-4 flex flex-col items-center"> */}
         <h2 className="text-xl font-bold mb-4">Contact Information</h2>
         <div className="flex space-x-4 mb-4">
           <a
@@ -55,7 +66,7 @@ const Contact = () => {
             <FaGithub size={24} />
           </a>
           <a
-            href="https://www.instagram.com/yourprofile"
+            href="https://www.instagram.com/hunky_harsh_3/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-pink-600 hover:text-pink-700 bg-white p-1 rounded-xl transition-colors transform hover:scale-105 duration-300"
@@ -77,9 +88,14 @@ const Contact = () => {
         <p className="text-white mb-2">Phone: 8624966429</p>
         <p className="text-white mb-2">Email: hdexamples@gmail.com</p>
       </div>
-
       {/* Right Side: Contact Form */}
-      <div className="lg:w-2/3 p-4 ">
+      <div
+        ref={ref2}
+        className={`lg:w-2/3 p-4 ${
+          isVisible1 ? "animate-zoomIn" : "opacity-0"
+        }`}
+      >
+        {/* <div className="lg:w-2/3 p-4 "> */}
         <h2 className="text-xl font-bold mb-2 mt-6 pb-2">Get in Touch</h2>
 
         <form

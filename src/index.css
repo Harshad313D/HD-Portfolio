@@ -35,11 +35,11 @@
 .edu-card {
   border: 2px solid black;
   box-shadow: 5px 5px 0px 0px black;
-  transform: rotate(-1deg);
+  /* transform: rotate(-1deg); */
   transition: transform 0.2s ease-in-out;
 }
 .edu-card:hover {
-  transform: rotate(1deg);
+  /* transform: rotate(1deg); */
 }
 
 .filter-shadow {

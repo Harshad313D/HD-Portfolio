@@ -1,4 +1,5 @@
 import React from "react";
+import { useInView } from "react-intersection-observer";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -21,7 +22,6 @@ import {
   BiLogoTailwindCss,
 } from "react-icons/bi";
 import { VscVscode } from "react-icons/vsc";
-
 import "../index.css";
 import { FaGit } from "react-icons/fa6";
 
@@ -74,11 +74,6 @@ const skills = {
       icon: <FaDatabase className="text-3xl text-blue-500" />,
       level: 70,
     },
-    // {
-    //   name: "MongoDB",
-    //   icon: <FaReact className="text-3xl text-green-500" />,
-    //   level: 70,
-    // },
     {
       name: "Flask",
       icon: <BiLogoFlask className="text-3xl text-blue-500" />,
@@ -88,28 +83,21 @@ const skills = {
   cloud: [
     {
       name: "AWS",
-      icon: <FaAws className="text-3xl text-black bg-orange-500  rounded-xl" />,
+      icon: <FaAws className="text-3xl text-black bg-orange-500 rounded-xl" />,
       level: 60,
     },
     {
       name: "GCP",
       icon: (
-        <BiLogoGoogleCloud className="text-3xl text-blue-400 bg-white  rounded-xl" />
+        <BiLogoGoogleCloud className="text-3xl text-blue-400 bg-white rounded-xl" />
       ),
       level: 45,
     },
     {
       name: "Docker",
-      icon: (
-        <FaDocker className="text-3xl text-blue-500 bg-white  rounded-xl" />
-      ),
+      icon: <FaDocker className="text-3xl text-blue-500 bg-white rounded-xl" />,
       level: 65,
     },
-    // {
-    //   name: "Kubernetes",
-    //   icon: <FaReact className="text-3xl text-blue-400" />,
-    //   level: 60,
-    // },
   ],
   tools: [
     {
@@ -132,14 +120,9 @@ const skills = {
       icon: <BiLogoFigma className="text-3xl text-purple-500" />,
       level: 65,
     },
-    // {
-    //   name: "Jira",
-    //   icon: <FaReact className="text-2xl text-blue-500" />,
-    //   level: 70,
-    // },
     {
       name: "Windows",
-      icon: <FaWindows className="text-3xl text-blue-500 " />,
+      icon: <FaWindows className="text-3xl text-blue-500" />,
       level: 70,
     },
     {
@@ -150,36 +133,46 @@ const skills = {
   ],
 };
 
-const SkillCard = ({ title, skills, animation }) => (
-  <div
-    className={`bg-white shadow-lg p-5 rounded-lg comic-card h-full flex flex-col justify-between transform transition duration-300 ${animation}`}
-  >
-    <h2 className="text-2xl font-bold mb-4">{title}</h2>
-    {skills.map((skill, index) => (
-      <div key={index} className="mb-4 ">
-        <div className="flex items-center">
-          {skill.icon}
-          <h3 className="ml-4 text-xl font-bold">{skill.name}</h3>
-        </div>
-        <div className="w-full bg-gray-200 rounded-full mt-3">
-          <div
-            className="bg-gradient-to-r from-blue-500 to-purple-500 text-xs font-medium text-white text-center p-1 leading-none rounded-full"
-            style={{
-              width: `${skill.level}%`,
-              boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-            }}
-          >
-            {skill.level}%
+const SkillCard = ({ title, skills, animation }) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  return (
+    <div
+      ref={ref}
+      className={`bg-white shadow-lg p-5 rounded-lg comic-card h-full flex flex-col justify-between transform transition duration-300 ${
+        inView ? animation : ""
+      }`}
+    >
+      <h2 className="text-2xl font-bold mb-4">{title}</h2>
+      {skills.map((skill, index) => (
+        <div key={index} className="mb-4 ">
+          <div className="flex items-center">
+            {skill.icon}
+            <h3 className="ml-4 text-xl font-bold">{skill.name}</h3>
+          </div>
+          <div className="w-full bg-gray-200 rounded-full mt-3">
+            <div
+              className="bg-gradient-to-r from-blue-500 to-purple-500 text-xs font-medium text-white text-center p-1 leading-none rounded-full"
+              style={{
+                width: `${skill.level}%`,
+                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+              }}
+            >
+              {skill.level}%
+            </div>
           </div>
         </div>
-      </div>
-    ))}
-  </div>
-);
+      ))}
+    </div>
+  );
+};
 
 const Skills = () => (
   <div className="min-h-screen bg-lime-500 ">
-    <div className="  py-12 px-4">
+    <div className="py-12 px-4">
       <h1 className="text-4xl font-bold text-center mb-10 hover:text-cyan-300 transition duration-300">
         My Skills
       </h1>
@@ -209,7 +202,7 @@ const Skills = () => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
       <path
         fill="#000080"
-        fill-opacity="1"
+        fillOpacity="1"
         d="M0,64L48,96C96,128,192,192,288,234.7C384,277,480,299,576,277.3C672,256,768,192,864,186.7C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
       ></path>
     </svg>

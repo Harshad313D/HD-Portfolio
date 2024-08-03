@@ -37,6 +37,10 @@ module.exports = {
           '0%': { opacity: 0, transform: 'translateY(20px)' },
           '100%': { opacity: 1, transform: 'translateY(0)' },
         },
+        fadeInUp2: {
+          '0%': { opacity: 0, transform: 'translateY(20px)' },
+          '100%': { opacity: 1, transform: 'translateY(0)' },
+        },
         fadeInDown: {
           '0%': { opacity: 0, transform: 'translateY(-20px)' },
           '100%': { opacity: 1, transform: 'translateY(0)' },
@@ -75,6 +79,8 @@ module.exports = {
       animation: {
         fadeIn: 'fadeIn 2s ease-in-out',
         fadeInUp: 'fadeInUp 2s ease-in-out',
+        fadeInUp2: 'fadeInUp 1s ease-in-out',
+
         fadeInDown: 'fadeInDown 1s ease-in-out',
         slideInLeft: 'slideInLeft 2s ease-in-out',
         slideInRight: 'slideInRight 2s ease-in-out',         

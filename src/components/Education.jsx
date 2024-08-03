@@ -99,7 +99,7 @@ const Education = () => {
 
           <div id="default-styled-tab-content ">
             <div
-              className={`p-4 rounded-lg bg-gradient-to-r from-indigo-500 to-blue-400 edu-card  text-white font-serif animate-fadeInUp ${
+              className={`p-4 rounded-lg bg-gradient-to-r from-indigo-500 to-blue-400 edu-card  text-white font-serif animate-fadeInUp2 ${
                 activeTab === "ssc" ? "" : "hidden"
               }`}
               id="ssc-content"
@@ -130,7 +130,7 @@ const Education = () => {
               <p></p>
             </div>
             <div
-              className={`p-4 rounded-lg bg-gradient-to-r from-yellow-500 to-yellow-400 edu-card text-white font-serif animate-fadeInUp ${
+              className={`p-4 rounded-lg bg-gradient-to-r from-yellow-500 to-yellow-400 edu-card text-white font-serif animate-fadeInUp2 ${
                 activeTab === "hsc" ? "" : "hidden"
               }`}
               id="hsc-content"
@@ -161,7 +161,7 @@ const Education = () => {
               </p>
             </div>
             <div
-              className={`p-4 rounded-lg bg-gradient-to-r from-fuchsia-700 to-fuchsia-500 edu-card font-serif animate-fadeInUp 
+              className={`p-4 rounded-lg bg-gradient-to-r from-fuchsia-700 to-fuchsia-500 edu-card font-serif animate-fadeInUp2 
               text-white ${activeTab === "graduation" ? "" : "hidden"}`}
               id="graduation-content"
               role="tabpanel"
@@ -196,7 +196,7 @@ const Education = () => {
               </p>
             </div>
             <div
-              className={`p-4 rounded-lg bg-gradient-to-r from-green-600 to-green-400 edu-card text-white font-serif animate-fadeInUp ${
+              className={`p-4 rounded-lg bg-gradient-to-r from-green-600 to-green-400 edu-card text-white font-serif animate-fadeInUp2 ${
                 activeTab === "certification" ? "" : "hidden"
               }`}
               id="certification-content"
@@ -323,7 +323,7 @@ const Education = () => {
                 <img
                   src={desk}
                   alt="Education related"
-                  className="object-cover filter-shadow"
+                  className="object-cover mask-heart filter-shadow"
                 />
               </div>
             </div>

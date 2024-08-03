@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
+import { useInView } from "react-intersection-observer";
 import "../index.css";
 import projectImage1 from "../assets/pmb.png";
 import projectImage2 from "../assets/ssms.jpg";
@@ -52,7 +53,7 @@ const projects = [
     image: projectImage4,
   },
 ];
-// slider settings
+
 const projectsSlides = [
   {
     title: "Project 5",
@@ -76,6 +77,103 @@ const projectsSlides = [
   },
 ];
 
+const ProjectCard = ({ project, index }) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  return (
+    <div
+      ref={ref}
+      className={`flex flex-col md:flex-row items-center justify-between w-full p-4 rounded-lg border-2 border-black shadow-black mb-4 relative overflow-hidden ${
+        index % 2 === 0 ? "bg-blue-300" : "bg-yellow-300"
+      } ${inView ? "fadeInUp" : "opacity-0"} group`}
+    >
+      <div className="absolute inset-0 bg-black opacity-30 group-hover:opacity-0 transition-opacity duration-300"></div>
+      {index % 2 === 0 ? (
+        <>
+          <div className="md:w-1/2 w-full flex justify-center p-4 z-10">
+            <img
+              src={project.image}
+              alt={project.title}
+              className="object-fill w-64 h-64 rounded-full"
+            />
+          </div>
+          <div className="md:w-1/2 w-full p-4 text-left z-10">
+            <h3 className="text-2xl font-semibold">{project.title}</h3>
+            <p className="mt-2">{project.description}</p>
+            <div className="mt-4">
+              <span className="text-sm font-semibold">Tech Stack: </span>
+              {project.techStack.map((tech) => (
+                <span
+                  key={tech}
+                  className="bg-gray-200 rounded-full px-2 py-1 text-xs mr-2"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+            <div className="mt-4 flex space-x-4">
+              <a
+                href={project.demoLink}
+                className="text-blue-600 hover:underline"
+              >
+                Live Demo
+              </a>
+              <a
+                href={project.githubLink}
+                className="text-blue-600 hover:underline"
+              >
+                GitHub
+              </a>
+            </div>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className="md:w-1/2 w-full p-4 text-left z-10">
+            <h3 className="text-2xl font-semibold">{project.title}</h3>
+            <p className="mt-2">{project.description}</p>
+            <div className="mt-4">
+              <span className="text-sm font-semibold">Tech Stack: </span>
+              {project.techStack.map((tech) => (
+                <span
+                  key={tech}
+                  className="bg-gray-200 rounded-full px-2 py-1 text-xs mr-2"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+            <div className="mt-4 flex justify-end space-x-4">
+              <a
+                href={project.demoLink}
+                className="text-blue-600 hover:underline"
+              >
+                Live Demo
+              </a>
+              <a
+                href={project.githubLink}
+                className="text-blue-600 hover:underline"
+              >
+                GitHub
+              </a>
+            </div>
+          </div>
+          <div className="md:w-1/2 w-full flex justify-center p-4 z-10">
+            <img
+              src={project.image}
+              alt={project.title}
+              className="object-fill w-64 h-64 rounded-full"
+            />
+          </div>
+        </>
+      )}
+    </div>
+  );
+};
+
 const Project = () => {
   const settings = {
     dots: true,
@@ -88,109 +186,21 @@ const Project = () => {
   };
 
   return (
-    <div className="relative p-6 pt-12 pb-12 gradient-bg  ">
+    <div className="relative p-6 pt-12 pb-12 gradient-bg">
       <h2 className="text-4xl text-white font-bold text-center mb-6 hover:text-cyan-300 transition duration-300">
         Projects
       </h2>
       <div className="space-y-8">
         {projects.map((project, index) => (
-          <div
-            key={project.title}
-            className={`flex flex-col md:flex-row items-center justify-between w-full p-4 rounded-lg border-2 border-black shadow-black  mb-4 relative overflow-hidden ${
-              index % 2 === 0 ? "bg-blue-300" : "bg-yellow-300"
-            } group`}
-          >
-            <div className="absolute inset-0 bg-black opacity-30 group-hover:opacity-0 transition-opacity duration-300"></div>
-            {index % 2 === 0 ? (
-              <>
-                <div className="md:w-1/2 w-full flex justify-center p-4 z-10">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="object-fill w-64 h-64 rounded-full"
-                  />
-                </div>
-                <div className="md:w-1/2 w-full p-4 text-left z-10">
-                  <h3 className="text-2xl font-semibold">{project.title}</h3>
-                  <p className="mt-2">{project.description}</p>
-                  <div className="mt-4">
-                    <span className="text-sm font-semibold">Tech Stack: </span>
-                    {project.techStack.map((tech) => (
-                      <span
-                        key={tech}
-                        className="bg-gray-200 rounded-full px-2 py-1 text-xs mr-2"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="mt-4 flex space-x-4">
-                    <a
-                      href={project.demoLink}
-                      className="text-blue-600 hover:underline"
-                    >
-                      Live Demo
-                    </a>
-                    <a
-                      href={project.githubLink}
-                      className="text-blue-600 hover:underline"
-                    >
-                      GitHub
-                    </a>
-                  </div>
-                </div>
-              </>
-            ) : (
-              <>
-                <div className="md:w-1/2 w-full p-4 text-left z-10">
-                  <h3 className="text-2xl font-semibold">{project.title}</h3>
-                  <p className="mt-2">{project.description}</p>
-                  <div className="mt-4">
-                    <span className="text-sm font-semibold">Tech Stack: </span>
-                    {project.techStack.map((tech) => (
-                      <span
-                        key={tech}
-                        className="bg-gray-200 rounded-full px-2 py-1 text-xs mr-2"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="mt-4 flex justify-end space-x-4">
-                    <a
-                      href={project.demoLink}
-                      className="text-blue-600 hover:underline"
-                    >
-                      Live Demo
-                    </a>
-                    <a
-                      href={project.githubLink}
-                      className="text-blue-600 hover:underline"
-                    >
-                      GitHub
-                    </a>
-                  </div>
-                </div>
-                <div className="md:w-1/2 w-full flex justify-center p-4 z-10">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="object-fill w-64 h-64 rounded-full"
-                  />
-                </div>
-              </>
-            )}
-          </div>
+          <ProjectCard key={project.title} project={project} index={index} />
         ))}
       </div>
-
       <Slider
         {...settings}
         className="bg-[#090a34] p-2 rounded-lg mt-8 shadow-xl"
       >
         {projectsSlides.map((slide, index) => (
           <div key={index}>
-            {" "}
             <div
               className="bg-center bg-cover p-10 rounded-lg shadow-lg transition-transform transform hover:scale-105"
               style={{ backgroundImage: `url(${pslick})` }}
@@ -198,7 +208,7 @@ const Project = () => {
               <h3 className="text-2xl font-extrabold text-center text-yellow-400 mb-4">
                 {slide.title}
               </h3>
-              <div className="text-center space-y-4 ">
+              <div className="text-center space-y-4">
                 <p className="text-lg font-semibold text-gray-100">
                   {slide.projectName}
                 </p>
@@ -206,7 +216,7 @@ const Project = () => {
                   href={slide.demoLink}
                   className="relative inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800"
                 >
-                  <span className="relative px-5 py-2.5 transition-all ease-in duration-75  dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                  <span className="relative px-5 py-2.5 transition-all ease-in duration-75 dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                     View Demo
                   </span>
                 </a>

@@ -5,6 +5,7 @@ import slide2 from "../assets/slide2.jpg";
 import slide3 from "../assets/slide3.jpg";
 import aboutBg from "../assets/aboutBg.jpg";
 import useIntersectionObserver from "../components/useIntersectionObserver";
+import "../index.css";
 
 const About = () => {
   const settings = {
@@ -47,9 +48,11 @@ const About = () => {
             />
           </div>
         </Slider>
-        <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center bg-black bg-opacity-50 text-white animate-fadeIn">
-          <h1 className="text-5xl font-comic mb-4">Welcome to My Portfolio</h1>
-          <h6 className="text-2xl pl-0 font-comic">
+        <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center bg-black bg-opacity-50  animate-fadeIn ">
+          <h1 className="text-5xl font-comic p-2 mb-4 bg-gradient-to-r from-yellow-300 via-blue-400 to-rose-400 bg-clip-text text-transparent ">
+            Welcome to My Portfolio
+          </h1>
+          <h6 className="text-2xl pl-0 font-comic bg-gradient-to-r from-yellow-300 via-blue-400 to-red-400 bg-clip-text text-transparent  ">
             Discover My Projects and Experience
           </h6>
         </div>
@@ -60,7 +63,7 @@ const About = () => {
         style={{ backgroundImage: `url(${aboutBg})` }}
       >
         <div className="max-w-5xl mx-auto pb-6">
-          <h1 className="font-bold text-4xl text-center mt-10 text-white hover:text-yellow-300 transition duration-300">
+          <h1 className="font-bold text-4xl text-center mt-10 text-white hover:text-yellow-300 transition duration-300 ">
             About Me
           </h1>
           <p

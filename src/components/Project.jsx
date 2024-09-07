@@ -57,9 +57,10 @@ const projects = [
 const projectsSlides = [
   {
     title: "Project 5",
-    demoLink: "https://harshad313d.github.io/tic-tac-toe-using-JS/",
-    projectName: "Tic Tac Toe",
+    demoLink: "https://nutri-guide-delta.vercel.app/",
+    projectName: "NutriGuide",
   },
+
   {
     title: "Project 6",
     demoLink: "https://harshad313d.github.io/Quote-Wizard/",
@@ -74,6 +75,11 @@ const projectsSlides = [
     title: "Project 8",
     demoLink: "https://harshad313d.github.io/Age_calculator/",
     projectName: "Age Calculator",
+  },
+  {
+    title: "Project 9",
+    demoLink: "https://harshad313d.github.io/tic-tac-toe-using-JS/",
+    projectName: "Tic Tac Toe",
   },
 ];
 

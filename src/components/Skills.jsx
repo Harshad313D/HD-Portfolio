@@ -24,6 +24,8 @@ import {
 import { VscVscode } from "react-icons/vsc";
 import "../index.css";
 import { FaGit } from "react-icons/fa6";
+import { DiMongodb } from "react-icons/di";
+import { SiAppwrite } from "react-icons/si";
 
 const skills = {
   frontend: [
@@ -75,6 +77,11 @@ const skills = {
       level: 70,
     },
     {
+      name: "MongoDB",
+      icon: <DiMongodb className="text-3xl text-green-500" />,
+      level: 50,
+    },
+    {
       name: "Flask",
       icon: <BiLogoFlask className="text-3xl text-blue-500" />,
       level: 50,
@@ -89,7 +96,7 @@ const skills = {
     {
       name: "GCP",
       icon: (
-        <BiLogoGoogleCloud className="text-3xl text-blue-400 bg-white rounded-xl" />
+        <BiLogoGoogleCloud className="text-3xl text-blue-500 bg-white rounded-xl" />
       ),
       level: 45,
     },
@@ -97,6 +104,11 @@ const skills = {
       name: "Docker",
       icon: <FaDocker className="text-3xl text-blue-500 bg-white rounded-xl" />,
       level: 65,
+    },
+    {
+      name: "Appwrite",
+      icon: <SiAppwrite className="text-3xl text-pink-500 " />,
+      level: 50,
     },
   ],
   tools: [
